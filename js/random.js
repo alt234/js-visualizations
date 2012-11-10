@@ -7,28 +7,28 @@ $(function () {
 function generateGrid() {	
 	grid = new Array();
 	
-	var columns = $(window).width() / 10;
-	var rows = ($(window).height() / 16) - 1;
+	var columns = Math.round($(window).width() / 10);
+	var rows = Math.round($(window).height() / 16) - 1;
 	
-	var i = 0;
-	var j = 0;
+	var col = 0;
+	var row = 0;
 	
 	var add = function() {
-		i++;
+		col++;
 		
-		if (i % columns === 0) {
-			grid[i] = $("<span>#</span>").appendTo("#ascii");
+		if (col % columns === 0) {
+			grid[col] = $("<span>#</span>").appendTo("#ascii");
 			$("<br />").appendTo("#ascii");
-			j++;
+			row++;
 		}
 		else {
-			grid[i] = $("<span>#</span>").appendTo("#ascii");
+			grid[col] = $("<span>#</span>").appendTo("#ascii");
 		}
 		
-		if (i == columns) shimmer();
-		
-		if (j < rows) {
-			setTimeout(add, 5);
+		if (col === columns) shimmer();
+
+		if (row < rows) {
+			setTimeout(add, 3);
 		}
     }
 
@@ -42,7 +42,7 @@ function generateGrid() {
 	
 	var shimmer = function() {
 		var rand = Math.floor(Math.random() * (grid.length - 1));
-		var color = colors[Math.floor(Math.random() * (colors.length - 1))];
+		//var color = colors[Math.floor(Math.random() * (colors.length - 1))];
 
 		grid[rand].animate({color: colors[0]}, 700);
 		
