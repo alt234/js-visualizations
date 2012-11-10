@@ -1,21 +1,11 @@
-$(function () {
-	var string = "";
+var grid;
 
+$(function () {
 	generateGrid();
 });
 
-var grid;
-
 function generateGrid() {	
 	grid = new Array();
-	
-	/*for (var i = 0; i < charactersHigh; i++) {
-		for (var j = 0; j < charactersWide; j++) {
-			var gridBlock = $("<span>#</span>");
-			gridBlock.appendTo("#ascii");
-		}
-		$("<br />").appendTo("#ascii");
-	}*/
 	
 	var columns = $(window).width() / 10;
 	var rows = ($(window).height() / 16) - 1;
@@ -35,22 +25,11 @@ function generateGrid() {
 			grid[i] = $("<span>#</span>").appendTo("#ascii");
 		}
 		
-		grid[i].mouseover(function () {
-			$(this).animate({color: colors[0]}, 700);
-		});
-		
-		grid[i].mouseout(function () {
-			$(this).animate({color: colors[1]}, 700);
-		});
-		
-		//if (i == 50) shimmer();
+		if (i == 50) shimmer();
 		
 		if (j < rows) {
 			setTimeout(add, 1);
 		}
-		/*else {
-			shimmer();
-		}*/
     }
 
 	var colors = new Array();
@@ -64,7 +43,6 @@ function generateGrid() {
 	var shimmer = function() {
 		var rand = Math.floor(Math.random() * (grid.length - 1));
 		var color = colors[Math.floor(Math.random() * (colors.length - 1))];
-		//alert(color);
 		
 		grid[rand].animate({color: colors[0]}, 700);
 		//grid[rand].animate({color: color}, 500);
