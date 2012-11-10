@@ -16,13 +16,15 @@ function generateGrid() {
 			grid[j] = $("<span>#</span>").appendTo("#ascii");
 			
 			grid[j].mouseover(function () {
-				$(this).animate({color: "red"}, 700);
+				$(this).animate({color: "white"}, 700);
 			});
 			
 			grid[j].mouseout(function () {
-				$(this).animate({color: "blue"}, 2000).animate({color: "#222"}, 4000);
+				$(this).animate({color: "purple"}, 2000).animate({color: "#222"}, 4000);
 			});
 		}
 		$("<br />").appendTo("#ascii");
 	}
+	
+	$("#loading").hide();
 }

@@ -4,3 +4,10 @@ html, body {
 	color: #222;
 	overflow: hidden;
 }
+
+#loading {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	color: #DDD;
+}
