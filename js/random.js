@@ -44,7 +44,7 @@ function generateGrid() {
 		var rand = Math.floor(Math.random() * (grid.length - 1));
 		//var color = colors[Math.floor(Math.random() * (colors.length - 1))];
 
-		grid[rand].animate({color: colors[0]}, 700);
+		grid[rand].animate({color: "white"}, 700).animate({color: "#05F2F2"}, 1500);
 		
 		setTimeout(shimmer, 20);
 	}
