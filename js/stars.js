@@ -13,7 +13,7 @@ function generateGrid() {
 	for (var i = 0; i < rows; i++) {
 		grid[i] = new Array();
 		for (var j = 0; j < columns; j++) {
-			grid[i][j] = $("<span>#</span>").appendTo("#ascii");
+			grid[i][j] = $("<span>*</span>").appendTo("#ascii");
 		}
 		$("<br />").appendTo("#ascii");
 	}
