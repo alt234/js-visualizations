@@ -1,10 +1,10 @@
 var grid;
 
 $(function () {
-	generateGrid();
+	setTimeout(generateGrid, 100);
 });
 
-function generateGrid() {	
+function generateGrid() {
 	grid = new Array();
 		
 	var columns = $(window).width() / 10;
