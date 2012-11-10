@@ -25,10 +25,10 @@ function generateGrid() {
 			grid[i] = $("<span>#</span>").appendTo("#ascii");
 		}
 		
-		if (i == 50) shimmer();
+		if (i == columns) shimmer();
 		
 		if (j < rows) {
-			setTimeout(add, 1);
+			setTimeout(add, 5);
 		}
     }
 
@@ -43,9 +43,8 @@ function generateGrid() {
 	var shimmer = function() {
 		var rand = Math.floor(Math.random() * (grid.length - 1));
 		var color = colors[Math.floor(Math.random() * (colors.length - 1))];
-		
+
 		grid[rand].animate({color: colors[0]}, 700);
-		//grid[rand].animate({color: color}, 500);
 		
 		setTimeout(shimmer, 20);
 	}
