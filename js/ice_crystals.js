@@ -7,8 +7,8 @@ $(function () {
 function generateGrid() {	
 	grid = new Array();
 	
-	var columns = Math.round($(window).width() / 10);
-	var rows = Math.round($(window).height() / 16) - 1;
+	var columns = Math.floor($(window).width() / 10);
+	var rows = Math.floor($(window).height() / 16);
 	
 	var col = 0;
 	var row = 0;
