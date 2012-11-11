@@ -1,33 +1,23 @@
-var grid;
-
 $(function () {
-	setTimeout(generateGrid, 100);
+	generateGrid();
 });
 
 function generateGrid() {
-	grid = new Array();
-		
-	var columns = Math.floor($(window).width() / 10);
-	var rows = Math.floor($(window).height() / 16);
-	
-	for (var i = 0; i < rows; i++) {
-		grid[i] = new Array();
-		for (var j = 0; j < columns; j++) {
-			grid[i][j] = $("<span>*</span>").appendTo("#ascii");
-		}
-		$("<br />").appendTo("#ascii");
-	}
-	
 	var timeout = 300;
+	
 	setInterval(function() {
 		timeout = Math.round(Math.random() * 500) + 1;
 	}, 3000);
 	
 	var shimmer = function() {
-		var randRow = Math.floor(Math.random() * grid.length);
-		var randCol = Math.floor(Math.random() * grid[randRow].length);
+		var x = Math.floor(Math.random() * ($(window).width() + 1));
+		var y = Math.floor(Math.random() * ($(window).height() + 1));
 
-		grid[randRow][randCol].animate({color: "white"}, 700).animate({color: "purple"}, 2000).animate({color: "#222"}, 4000);
+		$("<span style='position: absolute; top:" + y + "px; left:" + x + "px;'>*</span>")
+			.appendTo("#ascii")
+			.animate({color: "white"}, 700)
+			.animate({color: "purple"}, 2000)
+			.animate({color: "#222"}, 4000);
 
 		setTimeout(shimmer, timeout);
 	}
