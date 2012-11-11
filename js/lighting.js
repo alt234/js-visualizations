@@ -23,7 +23,7 @@ function generateGrid() {
 	
 	var timeout = 1000;
 	setInterval(function() {
-		timeout = Math.round(Math.random() * (1500 - 100)) + 1500;
+		timeout = Math.round(Math.random() * (250 - 10)) + 250;
 	}, 500);
 	
 	var shimmer = function() {
@@ -31,34 +31,30 @@ function generateGrid() {
 		var randCol = Math.floor(Math.random() * grid[randRow].length);
 		
 		// Center
-		grid[randRow][randCol].animate({color: "#FFF"}, 750).animate({color: "#222"}, 900);
+		grid[randRow][randCol].animate({color: "#FFF"}, 1100).animate({color: "#222"}, 1100);
 		
 		// left
-		try { grid[randRow][randCol-1].animate({color: "#999"}, 900).animate({color: "#222"}, 600); } catch(err) {}
-		try { grid[randRow][randCol-2].animate({color: "#666"}, 900).animate({color: "#222"}, 600); } catch(err) {}
-		try { grid[randRow][randCol-3].animate({color: "#333"}, 900).animate({color: "#222"}, 400); } catch(err) {}
+		try { grid[randRow][randCol-1].animate({color: "#666"}, 1100).animate({color: "#222"}, 1000); } catch(err) {}
+		try { grid[randRow][randCol-2].animate({color: "#333"}, 1100).animate({color: "#222"}, 1000); } catch(err) {}
 		
 		// Up
-		try { grid[randRow-1][randCol].animate({color: "#999"}, 900).animate({color: "#222"}, 600); } catch(err) {}
-		try { grid[randRow-2][randCol].animate({color: "#666"}, 900).animate({color: "#222"}, 600); } catch(err) {}
-		try { grid[randRow-3][randCol].animate({color: "#333"}, 900).animate({color: "#222"}, 600); } catch(err) {}
+		try { grid[randRow-1][randCol].animate({color: "#666"}, 1100).animate({color: "#222"}, 1000); } catch(err) {}
+		try { grid[randRow-2][randCol].animate({color: "#333"}, 1100).animate({color: "#222"}, 1000); } catch(err) {}
 		
 		// Down
-		try { grid[randRow+1][randCol].animate({color: "#999"}, 900).animate({color: "#222"}, 600); } catch(err) {}
-		try { grid[randRow+2][randCol].animate({color: "#666"}, 900).animate({color: "#222"}, 600); } catch(err) {}
-		try { grid[randRow+3][randCol].animate({color: "#333"}, 900).animate({color: "#222"}, 600); } catch(err) {}
+		try { grid[randRow+1][randCol].animate({color: "#666"}, 1100).animate({color: "#222"}, 1000); } catch(err) {}
+		try { grid[randRow+2][randCol].animate({color: "#333"}, 1100).animate({color: "#222"}, 1000); } catch(err) {}
 		
 		// Right
-		try { grid[randRow][randCol+1].animate({color: "#999"}, 900).animate({color: "#222"}, 600); } catch(err) {}
-		try { grid[randRow][randCol+2].animate({color: "#666"}, 900).animate({color: "#222"}, 600); } catch(err) {}
-		try { grid[randRow][randCol+3].animate({color: "#333"}, 900).animate({color: "#222"}, 600); } catch(err) {}
+		try { grid[randRow][randCol+1].animate({color: "#666"}, 1100).animate({color: "#222"}, 1000); } catch(err) {}
+		try { grid[randRow][randCol+2].animate({color: "#333"}, 1100).animate({color: "#222"}, 1000); } catch(err) {}
 		
+		// Corners
+		try { grid[randRow-1][randCol-1].animate({color: "#333"}, 1100).animate({color: "#222"}, 1000); } catch(err) {}
+		try { grid[randRow-1][randCol+1].animate({color: "#333"}, 1100).animate({color: "#222"}, 1000); } catch(err) {}
 		
-		try { grid[randRow-1][randCol-1].animate({color: "#666"}, 900).animate({color: "#222"}, 600); } catch(err) {}
-		try { grid[randRow-1][randCol+1].animate({color: "#666"}, 900).animate({color: "#222"}, 600); } catch(err) {}
-		
-		try { grid[randRow+1][randCol-1].animate({color: "#666"}, 900).animate({color: "#222"}, 600); } catch(err) {}
-		try { grid[randRow+1][randCol+1].animate({color: "#666"}, 900).animate({color: "#222"}, 600); } catch(err) {}
+		try { grid[randRow+1][randCol-1].animate({color: "#333"}, 1100).animate({color: "#222"}, 1000); } catch(err) {}
+		try { grid[randRow+1][randCol+1].animate({color: "#333"}, 1100).animate({color: "#222"}, 1000); } catch(err) {}
 
 		setTimeout(shimmer, timeout);
 	}
