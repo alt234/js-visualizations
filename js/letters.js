@@ -10,7 +10,7 @@ function generateGrid() {
 	
 	for (var i = 0; i < rows; i++) {
 		for (var j = 0; j < columns; j++) {
-			var letter = letters[Math.floor(Math.random() * (letters.length - 1))];
+			var letter = letters[Math.floor(Math.random() * letters.length )];
 			$("<span class='" + letter[0] + "'>" + letter[1] + "</span>").appendTo("#ascii");
 		}
 		$("<br />").appendTo("#ascii");
