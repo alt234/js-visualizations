@@ -1,4 +1,4 @@
-#jQuery Visualizations
+# jQuery Visualizations
 I wrote this code, apparently, quite a while ago. Looking at this code seven years later, to my surprise, I found that everything still works and they are all still fun to watch. The goal of this project was to become comfortable with jQuery and more specifically jQuery `animate`. Essentially these are just tech demos that taught me a little bit while writing them.
 
 Enjoy!
